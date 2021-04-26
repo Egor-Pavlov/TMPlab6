@@ -8,7 +8,7 @@ namespace TMPlab6
 {
     class ShadowLengh
     {
-        public static double CalcLengh(List<(double, double)> lines)
+        public static double Calc(List<(double, double)> lines)
         {
             if (lines.Count == 0)
                 throw new ArgumentException();
@@ -16,13 +16,15 @@ namespace TMPlab6
             List<double> X1 = new List<double>();
             List<double> X2 = new List<double>();
             double sum = 0;
-
+            //разбиваем массив пар на 2 массива
             for (int i = 0; i < lines.Count; i++)
             {
                 X1.Add(lines[i].Item1);
                 X2.Add(lines[i].Item2);
             }
+
             double x1, x2;
+            //сортируем линии. в начале списка та которая начинается левее всех
             for (int i = 0; i < lines.Count - 1; i++)
             {
                 if(X1[i] > X1[i+1])
@@ -35,6 +37,7 @@ namespace TMPlab6
                     X2[i + 1] = x2;
                 }
             }
+            //вычисляем сумму
             sum += X2[0] - X1[0];
             for (int i = 0; i < lines.Count - 1; i++)
             {

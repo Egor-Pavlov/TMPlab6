@@ -9,7 +9,7 @@ namespace TMPlab6
 {
     class TypeOfGraphic
     {
-        static string Define(List<double> Coeffs) //лист хранит коэффициенты ABCDEF
+        public static string Define(List<double> Coeffs) //лист хранит коэффициенты ABCDEF
         {
             double D = 0, d = 0;
             if(Coeffs.Count != 6)
