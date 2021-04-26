@@ -8,12 +8,7 @@ namespace TMPlab6
 {
     class ShadowLengh
     {
-        List<(double, double)> lines = new List<(double, double)>();
-        public ShadowLengh(List<(double, double)> lines)
-        {
-            this.lines = lines;
-        }
-        public double CalcLengh()
+        public static double CalcLengh(List<(double, double)> lines)
         {
             double sum = 0;
             for(int i = 0; i < lines.Count; i++)
