@@ -15,6 +15,13 @@ namespace TMPlab6
         public Form1()
         {
             InitializeComponent();
+            List<(double, double)> points = new List<(double, double)>();
+            points.Add((3, 4));
+            points.Add((2, 3.5));
+            points.Add((5, 7));
+
+            ShadowLengh.CalcLengh(points);
         }
+
     }
 }
