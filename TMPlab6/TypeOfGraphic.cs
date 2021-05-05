@@ -23,18 +23,28 @@ namespace TMPlab6
             
             if(D == 0)
             {
-                return "какой-то вид";
+                if (d > 0)
+                {
+                    return "D = " + D + "\td = "+ d +"\tPoint";
+                }
+                else if (d < 0)
+                {
+                    return "D = " + D + "\td = " + d + "\tCrossed lines";
+                }
+
+                return "D = " + D + "\td = " + d + "\tParallel Lines";
+
             }
             else if(d < 0)
             {
-                return "Гипербола";
+                return "D = " + D + "\td = " + d + "\tHyperbole";
             }
             else if (d > 0)
             {
-                return "Эллипс";
+                return "D = " + D + "\td = " + d + "\tEllipse";
             }
             
-            return "Парабола";
+            return "D = " + D + "\td = " + d + "\tParabole";
             
         }
     }

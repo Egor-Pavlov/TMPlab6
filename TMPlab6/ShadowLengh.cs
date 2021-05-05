@@ -8,8 +8,10 @@ namespace TMPlab6
 {
     class ShadowLengh
     {
-        public static double Calc(List<(double, double)> lines)
+        public static List<string> Calc(List<(double, double)> lines)
         {
+            List<string> Res = new List<string>();
+
             if (lines.Count == 0)
                 throw new ArgumentException();
 
@@ -37,6 +39,12 @@ namespace TMPlab6
                     X2[i + 1] = x2;
                 }
             }
+            string sorted = "";
+            for(int i = 0; i < X1.Count; i++)
+            {
+                sorted += (X1[i] + ";" + X2[i] + " ").ToString();
+            }
+            Res.Add(sorted);            
             //вычисляем сумму
             sum += X2[0] - X1[0];
             for (int i = 0; i < lines.Count - 1; i++)
@@ -52,8 +60,8 @@ namespace TMPlab6
                 }
                 sum += X2[i + 1] - X1[i + 1];
             }
-
-            return sum;
+            Res.Add(sum.ToString());
+            return Res;
         }
     }
 }
