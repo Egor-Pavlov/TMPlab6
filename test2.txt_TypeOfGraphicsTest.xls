@@ -1,5 +1,5 @@
-Input	D	d	Type
-1 2 3 4 5 6	D = 1	d = -1	Hyperbole
-tbefdvw	Invalid coeffs
-0 0 0 0 0 1	D = 0	d = 0	Parallel Lines
-2 2 8 2 2 8	D = 72	d = 12	Ellipse
+Input	D	d	Expected Type	Type	Result
+1 2 3 4 5 6 	1	-1	Hyperbole	Hyperbole	passed
+tbefdvw 			invalid_coeffs	invalid_coeffs	passed
+0 0 0 0 0 1 	0	0	Parallel_Lines	Parallel_Lines	passed
+2 2 8 2 2 8 	72	12	Ellipse	Ellipse	passed

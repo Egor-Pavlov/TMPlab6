@@ -1,4 +1,6 @@
-Input	Sorted	Sum
-2;3 4;5	2;3 4;5 	2	
-1;0 2;10	the coordinate of the end of the line must be greater than the coordinate of the beginning.	
-vwbkn	invalid coords.	
+Input	Expected out 	Sorted	output 	result
+2;3 4;5 	2;3 4;5	2	2	passed
+1;0 2;10 		exception	exception	passed
+1;0 2;10 		exception	exception	passed
+vwbkn 		exception	exception	passed
+1;2,5 3;4 7;10 	1;2,5 3;4 7;10	5,5	5,5	passed

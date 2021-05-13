@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace TMPlab6
 {
     class TypeOfGraphic
     {
-        public static string Define(List<double> Coeffs) //лист хранит коэффициенты ABCDEF
+        public static List<string> Define(List<double> Coeffs) //лист хранит коэффициенты ABCDEF
         {
+            List<string> res = new List<string>();
             double D = 0, d = 0;
-            if(Coeffs.Count != 6)
+            if (Coeffs.Count != 6)
             {
                 throw new ArgumentException();
             }
@@ -20,32 +17,37 @@ namespace TMPlab6
             D = Coeffs[0] * Coeffs[2] * Coeffs[5] + Coeffs[1] * Coeffs[4] * Coeffs[3] + Coeffs[1] * Coeffs[4] * Coeffs[3] -
                 Coeffs[3] * Coeffs[2] * Coeffs[3] - Coeffs[1] * Coeffs[1] * Coeffs[5] - Coeffs[0] * Coeffs[4] * Coeffs[4];
             d = Coeffs[0] * Coeffs[2] - Coeffs[1] * Coeffs[1];
-            
-            if(D == 0)
+
+            res.Add(D.ToString());
+            res.Add(d.ToString());
+
+            if (D == 0)
             {
                 if (d > 0)
                 {
-                    return "D = " + D + "\td = "+ d +"\tPoint";
+                    res.Add("Point");
+                    return res;
                 }
                 else if (d < 0)
                 {
-                    return "D = " + D + "\td = " + d + "\tCrossed lines";
+                    res.Add("Crossed_lines");
+                    return res;
                 }
-
-                return "D = " + D + "\td = " + d + "\tParallel Lines";
-
+                res.Add("Parallel_Lines");
+                return res;
             }
-            else if(d < 0)
+            else if (d < 0)
             {
-                return "D = " + D + "\td = " + d + "\tHyperbole";
+                res.Add("Hyperbole");
+                return res;
             }
             else if (d > 0)
             {
-                return "D = " + D + "\td = " + d + "\tEllipse";
+                res.Add("Ellipse");
+                return res;
             }
-            
-            return "D = " + D + "\td = " + d + "\tParabole";
-            
+            res.Add("Parabole");
+            return res;
         }
     }
 }
